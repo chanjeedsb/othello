@@ -1,6 +1,42 @@
 import React, { useState } from "react";
 import "./App.css";
 
+const App2 = () => {
+  const [board, setBoard] = useState([
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, -1, 1, 0, 0, 0],
+    [0, 0, 0, 1, -1, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+  ]);
+  const [currentState, setCurrentState] = useState(1);
+
+  const handleClick = (x, y) => {
+    const deepCopy = JSON.parse(JSON.stringify(board));
+    deepCopy[x][y] = currentState;
+    setBoard(deepCopy);
+  };
+
+  return (
+    <>
+      {board.map((rows, x) => {
+        return (
+          <div key={x}>
+            {rows.map((v, y) => (
+              <span keys={`${x}${y}`} onClick={(e) => handleClick(x, y)}>
+                {v}
+              </span>
+            ))}
+          </div>
+        );
+      })}
+    </>
+  );
+};
+
 function App() {
   var initialBoard = new Array(8);
   for (var i = 0; i < 8; i++) {
@@ -103,4 +139,4 @@ function App() {
   );
 }
 
-export default App;
+export default App2;
