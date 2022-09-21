@@ -39,6 +39,7 @@ function App() {
 
   useEffect(() => {
     if (countCanNotPlace === 2) {
+      console.log("countCanNotPlace");
       setEndGame(true);
     }
   }, [countCanNotPlace]);
@@ -92,7 +93,8 @@ function App() {
   };
 
   const updatePlaceBoard = (state) => {
-    if (count === 61) {
+    if (count > 60) {
+      console.log(`count=${count}`);
       setEndGame(true);
       return;
     }
@@ -110,10 +112,12 @@ function App() {
     if (countCanPlace === 0) {
       //このターン置けない
 
+      console.log(`countCanNotPlace=${countCanNotPlace}`);
       setCountCanNotPlace(countCanNotPlace + 1);
       setCurrentState(currentState * -1);
     } else {
       setplaceBoard(deepCopy);
+      setCountCanNotPlace(0);
     }
   };
 
@@ -165,6 +169,7 @@ function App() {
 
   const handleOnClick = (x, y) => {
     if (isCanBePlaced(x, y, currentState)) {
+      console.log(`Turn=${count}`);
       console.log("置ける");
       const deepCopy = JSON.parse(JSON.stringify(board));
       deepCopy[x][y] = currentState;
