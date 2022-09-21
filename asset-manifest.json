@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/othello/static/css/main.073c9b0a.css",
+    "main.js": "/othello/static/js/main.4dc7218e.js",
+    "static/js/787.dfe3ee7f.chunk.js": "/othello/static/js/787.dfe3ee7f.chunk.js",
+    "index.html": "/othello/index.html",
+    "main.073c9b0a.css.map": "/othello/static/css/main.073c9b0a.css.map",
+    "main.4dc7218e.js.map": "/othello/static/js/main.4dc7218e.js.map",
+    "787.dfe3ee7f.chunk.js.map": "/othello/static/js/787.dfe3ee7f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.4dc7218e.js"
+  ]
+}
